@@ -1,0 +1,35 @@
+name: Argon EON Controls
+url: https://github.com/russellstokes-ai/Argon-Eon-Controller
+version: "1.0.2"
+slug: argon_eon_controls
+description: Fan, OLED, temperature and disk controls for the Argon EON case
+arch:
+  - aarch64
+machine:
+  - raspberrypi4-64
+startup: system
+boot: auto
+init: false
+ingress: true
+ingress_port: 8099
+panel_icon: mdi:nas
+panel_title: Argon EON Controls
+panel_admin: true
+watchdog: http://[HOST]:[PORT:8099]/health
+hassio_api: true
+homeassistant_api: true
+hassio_role: manager
+full_access: true
+host_pid: true
+privileged:
+  - SYS_ADMIN
+  - SYS_RAWIO
+apparmor: false
+udev: true
+map:
+  - type: media
+    read_only: true
+options: {}
+schema: false
+stage: stable
+timeout: 15
